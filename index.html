@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DnD powered by Redstone</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <!--The nav bar-->
+    <ul class="menu">
+        <li class="menu2"><a href="index.html">NPC's, Music and Weather</a></li>
+        <li class="dropdown menu2"><a class="dropbtn">Spell lists</a>
+            <div class="dropdown-content">
+                <a href="spells/Bard.html">Bard</a>
+                <a href="spells/Cleric.html">Cleric</a>
+                <a href="spells/Druid.html">Druid</a>
+                <a href="spells/Paladin.html">Paladin</a>
+                <a href="spells/Ranger.html">Ranger</a>
+                <a href="spells/Sorcerer.html">Sorcerer</a>
+                <a href="spells/Warlock.html">Warlock</a>
+                <a href="spells/Wizard.html">Wizard</a>
+            </div>
+        </li>
+        <li class="menu2"><a href="map">Battlemap</a></li>
+    </ul>
+    <!--The main information blocks-->
+    <div class="filler"></div>
+    <div class="container">
+        <h1>NPC generator</h1>
+        <form>
+            <h5>Gender</h5>
+            <input type="radio" name="gender" id="male" value="male"> Male <br />
+            <input type="radio" name="gender" id="female" value="female"> Female <br />
+        </form>
+        <br />
+        <div class="wrapper">
+            <input type="submit" id="genNPC" class="button" value="Generate NPC!">
+        </div>
+        <p id="NPCReplace"></p>
+        <div class="wrapper">
+            <input type="submit" id="saveNPC" class="button" value="Save this NPC">
+        </div>
+    </div>
+    <div class="filler"></div>
+    <div class="container">
+        <h1>Music control</h1>
+        <form>
+            <h5>Locations</h5>
+            <input type="radio" name="music" id="town" value="town"> Town <br />
+            <input type="radio" name="music" id="city" value="city"> City <br />
+            <input type="radio" name="music" id="campfire" value="campfire"> Campfire <br />
+            <input type="radio" name="music" id="tavern" value="tavern"> Tavern <br />
+            <h5>Biomes</h5>
+            <input type="radio" name="music" id="forest" value="forest"> Forest <br />
+            <input type="radio" name="music" id="plains" value="plains"> Plains <br />
+            <input type="radio" name="music" id="mountains" value="mountains"> Mountains <br />
+            <input type="radio" name="music" id="desert" value="desert"> Desert <br />
+            <input type="radio" name="music" id="tundra" value="tundra"> Tundra <br />
+            <input type="radio" name="music" id="caves" value="caves"> Caves <br />
+            <input type="radio" name="music" id="sea" value="sea"> Sea <br />
+            <input type="radio" name="music" id="coast" value="coast"> Coast <br />
+            <h5>Conditions</h5>
+            <input type="radio" name="music" id="travel" value="travel"> Travel <br />
+            <input type="radio" name="music" id="creepy" value="creepy"> Creepy <br />
+            <input type="radio" name="music" id="heavyStorm" value="heavyStorm"> Heavy Storm <br />
+            <input type="radio" name="music" id="lightStorm" value="lightStorm"> Light Storm <br />
+            <input type="radio" name="music" id="night" value="night"> Night <br />
+            <input type="radio" name="music" id="rain" value="rain"> Rain <br />
+            <h5>Fighting</h5>
+            <input type="radio" name="music" id="dungeon" value="dungeon"> Dungeon <br />
+            <input type="radio" name="music" id="bossfight" value="bossfight"> Bossfight <br />
+            <input type="radio" name="music" id="fight" value="fight"> Fight <br />
+        </form>
+        <br />
+        <div class="wrapper">
+            <input type="submit" id="playMusic" class="button" value="Play the music!">
+            <br /><br />
+            <input type="submit" id="pause" class="button" value="Pause">
+        </div>
+    </div>
+    <div class="filler"></div>
+    <div class="container">
+        <h1>Initiative counter</h1>
+        <div class="wrapper">
+            <button class="button" id="addTd">Add</button>
+            <button class="button" id="editTd">Edit</button>
+            <button class="button" id="removeTd">Remove</button>
+        </div>
+        <br /><br />
+        <div class="wrapper">
+            <input id="InitInput" type="text" placeholder="Name" maxlength="18">
+            <input id="InitInput2" type="number" placeholder="Initiative" maxlength="2">
+            <input id="InitInput3" type="number" placeholder="Armor Class" maxlength="2">
+            <input id="InitInput4" type="number" placeholder="Passive Perception" maxlength="2">
+        </div>
+        <br /><br />
+        <table class="center" id="Initiative">
+            <tr>
+                <th>Name</th>
+                <th>Initiative</th>
+                <th>AC</th>
+                <th>PP</th>
+            </tr>
+            <tr>
+                <td>Damemon</td>
+                <td>20</td>
+                <td>22</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>Siegmeyer</td>
+                <td>17</td>
+                <td>16</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>Koos</td>
+                <td>16</td>
+                <td>19</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>Lorafina</td>
+                <td>14</td>
+                <td>15</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>Nymeria</td>
+                <td>11</td>
+                <td>16</td>
+                <td>12</td>
+            </tr>
+        </table>
+        <br />
+        <div class="wrapper">
+            <button onclick="moveRow('up')" class="button" id="up">Up</button>
+            <button onclick="moveRow('down')" class="button" id="down">Down</button>
+            <button class="button" id="sort">Sort</button>
+        </div>
+    </div>
+    <div class="horizontalfiller"></div>
+    <div class="filler"></div>
+    <script type="text/javascript" src="NPC/personality.js"></script>
+    <script type="text/javascript" src="NPC/others.js"></script>
+    <script type="text/javascript" src="NPC/firstnames.js"></script>
+    <script type="text/javascript" src="NPC/lastnames.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="monster.js"></script>
+    <script type="text/javascript" src="spells/array.js"></script>
+    <script type="text/javascript" src="search.js"></script>
+</body>
+
+</html>
