@@ -1,3 +1,7 @@
+/** Global NPC vars */
+var firstname = "";
+var lastname = "";
+
 // NPC code
 // global var that keeps the generated NPC until a new one is generated
 
@@ -7,11 +11,12 @@ var globalSave = '';
 // als er op de button geklikt wordt, start de functie
 document.getElementById("genNPC").addEventListener("click", checkRace)
 
+
+
 function checkRace() {
 
     // check gender
     var optA = document.getElementById("male").checked
-    var optB = document.getElementById("female").checked
 
     // All others
     var raceTemp = race[Math.floor(Math.random() * race.length)];
@@ -30,6 +35,60 @@ function checkRace() {
     var trait1 = pers[Math.floor(Math.random() * pers.length)];
     var trait2 = pers[Math.floor(Math.random() * pers.length)];
 
+    console.log(raceTemp);
+    var lastname = "";
+    if (raceTemp == "dwarf" && optA == true) {
+        firstname = DwarfMale[Math.floor(Math.random() * DwarfMale.length)];
+        lastname = DwarfLast[Math.floor(Math.random() * DwarfLast.length)];
+    } else if (raceTemp == "dwarf" && optA == false) {
+        firstname = DwarfFemale[Math.floor(Math.random() * DwarfFemale.length)];
+        lastname = DwarfLast[Math.floor(Math.random() * DwarfLast.length)];
+    } else if (raceTemp == "elf" && optA == true) {
+        firstname = ElfMale[Math.floor(Math.random() * ElfMale.length)];
+        lastname = ElfLast[Math.floor(Math.random() * ElfLast.length)];
+    } else if (raceTemp == "elf" && optA == false) {
+        firstname = ElfFemale[Math.floor(Math.random() * ElfFemale.length)];
+        lastname = ElfLast[Math.floor(Math.random() * ElfLast.length)];
+    } else if (raceTemp == "halfling" && optA == true) {
+        firstname = HalflingMale[Math.floor(Math.random() * HalflingMale.length)];
+        lastname = HalflingLast[Math.floor(Math.random() * HalflingLast.length)];
+    } else if (raceTemp == "halfling" && optA == false) {
+        firstname = HalflingFemale[Math.floor(Math.random() * HalflingFemale.length)];
+        lastname = HalflingLast[Math.floor(Math.random() * HalflingLast.length)];
+    } else if (raceTemp == "half-elf" && optA == true) {
+        firstname = HalfElfMale[Math.floor(Math.random() * HalfElfMale.length)];
+        lastname = HumanLast[Math.floor(Math.random() * HumanLast.length)];
+    } else if (raceTemp == "half-elf" && optA == false) {
+        firstname = HalfElfFemale[Math.floor(Math.random() * HalfElfFemale.length)];
+        lastname = HumanLast[Math.floor(Math.random() * HumanLast.length)];
+    } else if (raceTemp == "half-orc" && optA == true) {
+        firstname = HalfOrcMale[Math.floor(Math.random() * HalfOrcMale.length)];
+    } else if (raceTemp == "half-orc" && optA == false) {
+        firstname = HalfOrcFemale[Math.floor(Math.random() * HalfOrcFemale.length)];
+    } else if (raceTemp == "dragonborn" && optA == true) {
+        firstname = DragonbornMale[Math.floor(Math.random() * DragonbornMale.length)];
+        lastname = DragonbornLast[Math.floor(Math.random() * DragonbornLast.length)];
+    } else if (raceTemp == "dragonborn" && optA == false) {
+        firstname = DragonbornFemale[Math.floor(Math.random() * DragonbornFemale.length)];
+        lastname = DragonbornLast[Math.floor(Math.random() * DragonbornLast.length)];
+    } else if (raceTemp == "tiefling" && optA == true) {
+        firstname = TieflingMale[Math.floor(Math.random() * TieflingMale.length)];
+        lastname = TieflingLast[Math.floor(Math.random() * TieflingLast.length)];
+    } else if (raceTemp == "tiefling" && optA == false) {
+        firstname = TieflingFemale[Math.floor(Math.random() * TieflingFemale.length)];
+        lastname = TieflingLast[Math.floor(Math.random() * TieflingLast.length)];
+    } else if (raceTemp == "gnome" && optA == true) {
+        firstname = GnomeMale[Math.floor(Math.random() * GnomeMale.length)];
+    } else if (raceTemp == "gnome" && optA == false) {
+        firstname = GnomeFemale[Math.floor(Math.random() * GnomeFemale.length)];
+    } else if (raceTemp == "human" && optA == false) {
+        firstname = HumanFemale[Math.floor(Math.random() * HumanFemale.length)];
+        lastname = HumanLast[Math.floor(Math.random() * HumanLast.length)];
+    } else if (raceTemp == "human" && optA == true) {
+        firstname = HumanMale[Math.floor(Math.random() * HumanMale.length)];
+        lastname = HumanLast[Math.floor(Math.random() * HumanLast.length)];
+    }
+    console.log(firstname + " " + lastname)
 }
 
 // Save NPC code
@@ -39,7 +98,7 @@ function Save() {
     //post to php
     const xhr = new XMLHttpRequest();
 
-    xhr.onload = function() {
+    xhr.onload = function () {
         const serverResponse = document.getElementById("test");
         serverResponse.innerHTML = this.responseText;
     };
@@ -254,7 +313,7 @@ var index;
 
 function selectRow() {
     for (var i = 1; i < table.rows.length; i++) {
-        table.rows[i].onclick = function() {
+        table.rows[i].onclick = function () {
             rIndex = this.rowIndex;
             console.log(rIndex);
             document.getElementById("InitInput").value = this.cells[0].innerHTML;
@@ -315,7 +374,7 @@ function sortRows() {
     var rowsOG = document.getElementById("Initiative").rows;
     rows = Array.prototype.slice.call(rowsOG)
     rows.splice(0, 1);
-    rows.sort(function(a, b) {
+    rows.sort(function (a, b) {
         return b.cells[1].innerHTML - a.cells[1].innerHTML;
     })
     var parent = rowsOG[0].parentNode;
