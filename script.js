@@ -5,7 +5,7 @@ var lastname = "";
 // NPC code
 // global var that keeps the generated NPC until a new one is generated
 
-var globalSave = '';
+var globalSave = [];
 
 
 // als er op de button geklikt wordt, start de functie
@@ -15,6 +15,7 @@ document.getElementById("genNPC").addEventListener("click", checkRace)
 
 function checkRace() {
 
+    globalSave = [];
     // check gender
     var optA = document.getElementById("male").checked
 
@@ -35,7 +36,6 @@ function checkRace() {
     var trait1 = pers[Math.floor(Math.random() * pers.length)];
     var trait2 = pers[Math.floor(Math.random() * pers.length)];
 
-    console.log(raceTemp);
     var lastname = "";
     if (raceTemp == "dwarf" && optA == true) {
         firstname = DwarfMale[Math.floor(Math.random() * DwarfMale.length)];
@@ -88,7 +88,48 @@ function checkRace() {
         firstname = HumanMale[Math.floor(Math.random() * HumanMale.length)];
         lastname = HumanLast[Math.floor(Math.random() * HumanLast.length)];
     }
-    console.log(firstname + " " + lastname)
+
+    /** Put all important stuff in a single array */
+    if (optA == true) {
+        globalSave.push(raceTemp);
+        globalSave.push(firstname + " " + lastname);
+        globalSave.push(hairCTemp + ", " + hairTemp + " hair, " + facehairTemp);
+        globalSave.push(ageTemp + ", " + heightTemp + ", " + build + " build");
+        globalSave.push(eyesTemp + " eyes,  " + faceTemp + " face");
+        globalSave.push("scar: " + scarsTemp + ", wealth: " + wealthTemp);
+        globalSave.push("confidence level: " + confidenceTemp + ", goal: " + goalTemp)
+        globalSave.push(trait1 + ", " + trait2)
+    }
+    if (optA == false) {
+        globalSave.push(raceTemp);
+        globalSave.push(firstname + " " + lastname);
+        globalSave.push(hairCTemp + ", " + hairTemp + " hair");
+        globalSave.push(ageTemp + ", " + heightTemp + ", " + build + " build");
+        globalSave.push(eyesTemp + " eyes,  " + faceTemp + " face");
+        globalSave.push("scar: " + scarsTemp + ", wealth: " + wealthTemp);
+        globalSave.push("confidence level: " + confidenceTemp + ", goal: " + goalTemp)
+        globalSave.push(trait1 + ", " + trait2)
+    }
+    /** display the randomized NPC in a generated table */
+    displayNPC();
+}
+
+function displayNPC() {
+    clearTable();
+    var table = document.getElementById("NPCReplace")
+    for (i = 0; i < globalSave.length; i++) {
+        var node = document.createTextNode(globalSave[i]);
+        var tableR = document.createElement("tr");
+        var tableD = document.createElement("td");
+        tableD.appendChild(node);
+        tableR.appendChild(tableD);
+        table.appendChild(tableR);
+    }
+}
+
+function clearTable() {
+    var table = document.getElementById("NPCReplace");
+    table.innerHTML = "";
 }
 
 // Save NPC code

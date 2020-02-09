@@ -42,7 +42,10 @@ html {
     float: left;
     height: 500px;
 }
-
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
 .filler2 {
     display: block;
     width: 16%;

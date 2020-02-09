@@ -3,7 +3,7 @@ var race = [
 ]
 
 var hair = [
-    "none", "short", "mid-length", "shoulder-height", "below shoulder-height"
+    "no", "short", "mid-length", "shoulder-height", "below shoulder-height"
 ]
 var hairColour = [
     "blond", "brown", "lightbrown", "black", "hazel", "auburn", "fiery red", "white", "gray"
