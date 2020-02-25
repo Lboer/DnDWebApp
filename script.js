@@ -112,6 +112,13 @@ function checkRace() {
     }
     /** display the randomized NPC in a generated table */
     displayNPC();
+    displaySaveBtn();
+}
+
+// TO DO, CENTER BUTTON
+function displaySaveBtn(){
+    var btn = document.getElementById("saveNPC");
+    btn.style.display = "block";
 }
 
 function displayNPC() {
@@ -157,48 +164,32 @@ document.getElementById("playMusic").addEventListener("click", checkAmbiance)
 var audioTown = new Audio('music/Town.mp3');
 var audioCity = new Audio('music/City.mp3');
 var audioForest = new Audio('music/Forest.mp3');
-var audioPlains = new Audio('music/Plains.mp3');
 var audioMountains = new Audio('music/Mountains.mp3');
-var audioDesert = new Audio('music/Desert.mp3');
-var audioTundra = new Audio('music/Tundra.mp3');
-var audioDungeon = new Audio('music/Dungeon.mp3');
-var audioTravel = new Audio('music/Travel.mp3');
 var audioBossfight = new Audio('music/Bossfight.mp3');
-var audioCreepy = new Audio('music/Creepy.mp3');
-var audioHeavyStorm = new Audio('music/HeavyStorm.mp3');
-var audioLightStorm = new Audio('music/LightStorm.mp3');
 var audioNight = new Audio('music/Night.mp3');
 var audioCampfire = new Audio('music/Campfire.mp3');
 var audioTavern = new Audio('music/Tavern.mp3');
 var audioCaves = new Audio('music/Caves.mp3');
-var audioSea = new Audio('music/Sea.mp3');
 var audioCoast = new Audio('music/Coast.mp3');
 var audioFight = new Audio('music/Fight.mp3');
-var audioRain = new Audio('music/Rain.mp3')
+var audioRain = new Audio('music/Rain.mp3');
+var audioTravel = new Audio('music/Travel.mp3');
 
 // kijken welke soort muziek geselecteerd is
 function checkAmbiance() {
     var opt1 = document.getElementById("town").checked
     var opt2 = document.getElementById("city").checked
     var opt3 = document.getElementById("forest").checked
-    var opt4 = document.getElementById("plains").checked
-    var opt5 = document.getElementById("mountains").checked
-    var opt6 = document.getElementById("desert").checked
-    var opt7 = document.getElementById("tundra").checked
-    var opt8 = document.getElementById("dungeon").checked
-    var opt9 = document.getElementById("travel").checked
-    var opt10 = document.getElementById("bossfight").checked
-    var opt11 = document.getElementById("creepy").checked
-    var opt12 = document.getElementById("heavyStorm").checked
-    var opt13 = document.getElementById("lightStorm").checked
-    var opt14 = document.getElementById("night").checked
-    var opt15 = document.getElementById("campfire").checked
-    var opt16 = document.getElementById("tavern").checked
-    var opt17 = document.getElementById("caves").checked
-    var opt18 = document.getElementById("sea").checked
-    var opt19 = document.getElementById("coast").checked
-    var opt20 = document.getElementById("fight").checked
-    var opt21 = document.getElementById("rain").checked
+    var opt4 = document.getElementById("mountains").checked
+    var opt5 = document.getElementById("bossfight").checked
+    var opt6 = document.getElementById("night").checked
+    var opt7 = document.getElementById("campfire").checked
+    var opt8 = document.getElementById("tavern").checked
+    var opt9 = document.getElementById("caves").checked
+    var opt10 = document.getElementById("coast").checked
+    var opt11 = document.getElementById("fight").checked
+    var opt12 = document.getElementById("rain").checked
+    var opt13 = document.getElementById("travel").checked
 
     // afspelen per lijst
     if (opt1 == true) {
@@ -211,58 +202,34 @@ function checkAmbiance() {
         audioForest.play();
     };
     if (opt4 == true) {
-        audioPlains.play();
-    };
-    if (opt5 == true) {
         audioMountains.play();
     };
-    if (opt6 == true) {
-        audioDesert.play();
-    };
-    if (opt7 == true) {
-        audioTundra.play();
-    };
-    if (opt8 == true) {
-        audioDungeon.play();
-    };
-    if (opt9 == true) {
-        audioTravel.play();
-    };
-    if (opt10 == true) {
+    if (opt5 == true) {
         audioBossfight.play();
     };
-    if (opt11 == true) {
-        audioCreepy.play();
-    };
-    if (opt12 == true) {
-        audioHeavyStorm.play();
-    };
-    if (opt13 == true) {
-        audioLightStorm.play();
-    };
-    if (opt14 == true) {
+    if (opt6 == true) {
         audioNight.play();
     };
-    if (opt15 == true) {
+    if (opt7 == true) {
         audioCampfire.play();
     };
-    if (opt16 == true) {
+    if (opt8 == true) {
         audioTavern.play();
     };
-    if (opt17 == true) {
+    if (opt9 == true) {
         audioCaves.play();
     };
-    if (opt18 == true) {
-        audioSea.play();
-    };
-    if (opt19 == true) {
+    if (opt10 == true) {
         audioCoast.play();
     };
-    if (opt20 == true) {
+    if (opt11 == true) {
         audioFight.play();
     };
-    if (opt21 == true) {
+    if (opt12 == true) {
         audioRain.play();
+    }
+    if (opt13 == true){
+        audioTravel.play();
     }
 }
 
@@ -273,24 +240,16 @@ function pauseMusic() {
     audioTown.pause();
     audioCity.pause();
     audioForest.pause();
-    audioPlains.pause();
     audioMountains.pause();
-    audioDesert.pause();
-    audioTundra.pause();
-    audioDungeon.pause();
-    audioTravel.pause();
     audioBossfight.pause();
-    audioCreepy.pause();
-    audioHeavyStorm.pause();
-    audioLightStorm.pause();
     audioNight.pause();
     audioCampfire.pause();
     audioTavern.pause();
     audioCaves.pause();
-    audioSea.pause();
     audioCoast.pause();
     audioFight.pause();
     audioRain.pause();
+    audioTravel.pause();
 }
 
 // Initiative code
