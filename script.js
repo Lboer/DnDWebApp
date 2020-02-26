@@ -193,42 +193,55 @@ function checkAmbiance() {
 
     // afspelen per lijst
     if (opt1 == true) {
+        audioTown.loop = true;
         audioTown.play();
     };
     if (opt2 == true) {
+        audioCity.loop = true;
         audioCity.play();
     };
     if (opt3 == true) {
+        audioForest.loop = true;
         audioForest.play();
     };
     if (opt4 == true) {
+        audioMountains.loop = true;
         audioMountains.play();
     };
     if (opt5 == true) {
+        audioBossfight.loop = true;
         audioBossfight.play();
     };
     if (opt6 == true) {
+        audioNight.loop = true;
         audioNight.play();
     };
     if (opt7 == true) {
+        audioCampfire.loop = true;
         audioCampfire.play();
     };
     if (opt8 == true) {
+        audioTavern.loop = true;
         audioTavern.play();
     };
     if (opt9 == true) {
+        audioCaves.loop = true;
         audioCaves.play();
     };
     if (opt10 == true) {
+        audioCoast.loop = true;
         audioCoast.play();
     };
     if (opt11 == true) {
+        audioFight.loop = true;
         audioFight.play();
     };
     if (opt12 == true) {
+        audioRain.loop = true;
         audioRain.play();
     }
     if (opt13 == true){
+        audioTravel.loop = true;
         audioTravel.play();
     }
 }
@@ -358,8 +371,10 @@ function moveRow(direction) {
     var rows = document.getElementById("Initiative").rows;
     var parent = rows[rIndex].parentNode;
     if (direction === "up") {
-        parent.insertBefore(rows[rIndex], rows[rIndex - 1]);
-        rIndex--;
+        if (rIndex != 1){
+            parent.insertBefore(rows[rIndex], rows[rIndex - 1]);
+            rIndex--;
+        }
     }
     if (direction === "down") {
         parent.insertBefore(rows[rIndex + 1], rows[rIndex]);
