@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>DnD powered by Redstone</title>
+        <link rel="stylesheet" type="text/css" href="map.css">
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <div class="content">
+            <div id="question">
+                <select id="choice" onchange="chooseTerrain()">
+                    <option name ="choice" value="default">Make a choice!</option>
+                    <option name="choice" value="dungeon">dungeon</option>
+                    <option name="choice" value="forest">forest</option>
+                    <option name="choice" value="cave">cave</option> 
+                    <option name="choice" value="coast">coast</option> 
+                    <option name="choice" value="desert">desert</option>
+                    <option name="choice" value="mountain">mountain</option>
+                    <option name="choice" value="swamp">swamp</option> 
+                    <option name="choice" value="city">city</option> 
+                </select>
+            </div>
+        </div>
+        <table id="table" style="position: absolute; top: 0; bottom: 0; left: 0;
+            right: 0;">
+        </table>
+        <script type="text/javascript" src="map.js"></script>
+    </body>
+
+</html>

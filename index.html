@@ -11,8 +11,8 @@
     <!--The nav bar-->
     <ul class="menu">
         <li class="menu2"><a href="index.html">NPC's, Music and Weather</a></li>
-        <li class="dropdown menu2"><a href="spells">Spell lists</a></li>
-        <li class="menu2"><a href="map">Battlemap</a></li>
+        <li class="dropdown menu2"><a href="spells/spells.html">Spell lists</a></li>
+        <li class="menu2"><a href="map/map.html">Battlemap</a></li>
     </ul>
     <!--The main information blocks-->
     <div class="filler"></div>
@@ -75,9 +75,9 @@
         <br /><br />
         <div class="wrapper">
             <input id="InitInput" type="text" placeholder="Name" maxlength="18">
-            <input id="InitInput2" type="number" placeholder="Initiative" maxlength="2">
-            <input id="InitInput3" type="number" placeholder="Armor Class" maxlength="2">
-            <input id="InitInput4" type="number" placeholder="Passive Perception" maxlength="2">
+            <input id="InitInput2" type="number" placeholder="Initiative" maxlength="2" min="-2">
+            <input id="InitInput3" type="number" placeholder="Armor Class" maxlength="2" min="0">
+            <input id="InitInput4" type="number" placeholder="Passive Perception" maxlength="2" min="7">
         </div>
         <br /><br />
         <table class="center" id="Initiative">

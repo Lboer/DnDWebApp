@@ -1,0 +1,43 @@
+table,
+td,
+th {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+td {
+    width: 5vw;
+}
+
+tr {
+    height: 5vw;
+}
+
+.img {
+    height: 94px;
+    width: 94px;
+}
+
+#question {
+    display: block;
+
+}
+#table {
+    display: none;
+}
+.content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+button {
+    background-color: gray;
+}
