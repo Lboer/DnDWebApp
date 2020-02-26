@@ -115,10 +115,9 @@ function checkRace() {
     displaySaveBtn();
 }
 
-// TO DO, CENTER BUTTON
 function displaySaveBtn(){
     var btn = document.getElementById("saveNPC");
-    btn.style.display = "block";
+    btn.style.visibility = "visible";
 }
 
 function displayNPC() {

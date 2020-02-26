@@ -95,7 +95,7 @@ html {
 }
 
 #saveNPC {
-    display: none;
+    visibility: hidden;
 }
 
 .strongP {
