@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DnD powered by Redstone</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <!--The nav bar-->
+    <ul class="menu">
+        <li class="menu2"><a href="../index.html">NPC's, Music and Weather</a></li>
+        <li class="dropdown menu2"><a href="spells.html">Spell lists</a></li>
+        <li class="menu2"><a href="../map/map.html">Battlemap</a></li>
+    </ul>
+    <div class="filler"></div>
+    <div class="container">
+        <h1>Choose Spell Criteria</h1>
+        <form>
+            <h5>Spell Caster</h5>
+            <div class="wrapper">
+                <select id="caster" class="selectpicker">
+                    <option value="Default">Pick a class or leave blank</option>
+                    <option value="Bard">Bard</option>
+                    <option value="Cleric">Cleric</option>
+                    <option value="Druid">Druid</option>
+                    <option value="Paladin">Paladin</option>
+                    <option value="Ranger">Ranger</option>
+                    <option value="Sorcerer">Sorcerer</option>
+                    <option value="Warlock">Warlock</option>
+                    <option value="Wizard">Wizard</option>
+                </select>
+            </div>
+            <br />
+            <br />
+            <h5>Spell Level</h5>
+            <div class="wrapper">
+                <select id="level" class="selectpicker">
+                    <option value="Default">Pick a level or leave blank</option>
+                    <option value="Cantrip">Cantrip</option>
+                    <option value="1st-level">Level 1</option>
+                    <option value="2nd-level">Level 2</option>
+                    <option value="3rd-level">Level 3</option>
+                    <option value="4th-level">Level 4</option>
+                    <option value="5th-level">Level 5</option>
+                    <option value="6th-level">Level 6</option>
+                    <option value="7th-level">Level 7</option>
+                    <option value="8th-level">Level 8</option>
+                    <option value="9th-level">Level 9</option>
+                </select>
+            </div>
+            <br />
+            <br />
+            <h5>Spell School</h5>
+            <div class="wrapper">
+                <select id="school" class="selectpicker">
+                    <option value="Default">Pick a school or leave blank</option>
+                    <option value="Conjuration">Conjuration</option>
+                    <option value="Necromancy">Necromancy</option>
+                    <option value="Evocation">Evocation</option>
+                    <option value="Abjuration">Abjuration</option>
+                    <option value="Transmutation">Transmutation</option>
+                    <option value="Divination">Divination</option>
+                    <option value="Enchantment">Enchantment</option>
+                    <option value="Illusion">Illusion</option>
+                </select>
+            </div>
+        </form>
+        <br />
+        <div class="wrapper">
+            <input type="submit" id="loadSpells" class="button" value="Load Spells!">
+        </div>
+    </div>
+    <div class="filler"></div>
+    <div class="container2">
+        <h1>Spells</h1>
+    </div>
+    <div class="filler"></div>
+
+    <script type="text/javascript" src="array.js"></script>
+    <script type="text/javascript" src="spells.js"></script>
+</body>
+
+</html>
