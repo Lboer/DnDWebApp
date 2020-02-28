@@ -245,9 +245,8 @@ tr:hover {
 }
 .spellDiv p {
     display: none;
-    overflow: hidden;
+    overflow-wrap: break-word;
     white-space: wrap;
-    max-width: 100%;
 }
 .spellDiv table td {
     border: none;
@@ -263,4 +262,5 @@ tr:hover {
 }
 .container2 table td {
     width: 20%;
+    text-align: center;
 }

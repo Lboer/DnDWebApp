@@ -79,9 +79,9 @@ function updateClicks() {
     var i = 0;
 
     for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-                var content = this.getElementsByTagName("p");
-                if (content[0].firstChild.style.display === "block") {
+            coll[i].addEventListener("click", function(event) {
+                var content = event.target.closest(".spellDiv").querySelector("p");
+                if (content.style.display === "block") {
                     content.style.display = "none";
                 } else {
                     content.style.display = "block";
