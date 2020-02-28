@@ -24,6 +24,8 @@ html {
 
 .container2 {
     display: block;
+    overflow-y: auto;
+    max-height: 80vh;
     width: 50%;
     border: 1px solid lightgreen;
     background-color: rgba(211, 211, 211, 0.5);
@@ -239,7 +241,26 @@ tr:hover {
     cursor: pointer;
     border: black 1px solid;
     word-wrap: break-word;
+    width: 100%;
 }
 .spellDiv p {
     display: none;
+    overflow: hidden;
+    white-space: wrap;
+    max-width: 100%;
+}
+.spellDiv table td {
+    border: none;
+    width: 20%;
+}
+.spellDiv table {
+    width: 100%;
+    border: none;
+}
+.container2 table {
+    width: 100%;
+    border: none;
+}
+.container2 table td {
+    width: 20%;
 }
