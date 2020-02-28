@@ -242,11 +242,17 @@ tr:hover {
     border: black 1px solid;
     word-wrap: break-word;
     width: 100%;
+    overflow: hidden;
+    display: block;
+    overflow-wrap: break-word;
+    white-space: wrap;
 }
 .spellDiv p {
     display: none;
     overflow-wrap: break-word;
     white-space: wrap;
+    max-width: 940px;
+    text-align: left;
 }
 .spellDiv table td {
     border: none;
