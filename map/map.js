@@ -1,16 +1,24 @@
 var table = document.getElementById("table");
 var count = 1;
+var input = "5 ft"
 var tbody = document.createElement("tbody");
+
+/** This function generates the table and with it the onmousedown function:
+ * If people use the middle mouse button, it will edit a value.
+ * If people use the right mouse button, it will paste the editted or default value on the table
+ */
 for (i = 0; i < 12; i++){
     var tr = document.createElement("tr");
     for (j = 0; j < 20; j++){
         var td = document.createElement('td');
         td.onmousedown = function(event){
+            if(event.button == 1) {
+                input = window.prompt("Insert the height deviation:", "5 ft");
+            }
             if(event.button == 2){
                 var id = event.target.id
                 var addText = document.getElementById(id);
-                var prompt = window.prompt("Insert the height deviation:", "5 ft")
-                addText.innerHTML = prompt;
+                addText.innerHTML = input;
             }
         };
         tr.appendChild(td)
