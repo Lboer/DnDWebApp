@@ -13,6 +13,9 @@ body {
 
 td {
     width: 5vw;
+    color: red;
+    text-align: center;
+    font-weight: bold;
 }
 
 tr {
@@ -30,6 +33,7 @@ tr {
 }
 #table {
     display: none;
+    table-layout: fixed;
 }
 .content {
     position: absolute;
